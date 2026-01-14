@@ -1,0 +1,12 @@
+# Kubernetes ConfigMap for ML Pipeline
+# =====================================
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ml-pipeline-config
+data:
+  API_HOST: "0.0.0.0"
+  API_PORT: "8000"
+  LOG_LEVEL: "INFO"
+  MODEL_PATH: "/app/artifacts/model.pkl"

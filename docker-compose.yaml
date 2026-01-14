@@ -1,0 +1,25 @@
+# Docker Compose for ML Pipeline
+# ===============================
+
+version: '3.8'
+
+services:
+  ml-api:
+    build: .
+    container_name: ml-pipeline-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./artifacts:/app/artifacts
+      - ./logs:/app/logs
+    environment:
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - LOG_LEVEL=INFO
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

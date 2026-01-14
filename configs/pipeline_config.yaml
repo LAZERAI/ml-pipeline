@@ -1,0 +1,20 @@
+# ML Pipeline Configuration
+# -------------------------
+
+data:
+  raw_path: "data/raw"
+  processed_path: "data/processed"
+  test_size: 0.2
+  dataset: "covtype"  # Forest Covtype: 581,012 samples, 54 features, 7 classes
+
+model:
+  type: "random_forest"
+  random_state: 42
+  n_estimators: 100
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+
+logging:
+  level: "INFO"

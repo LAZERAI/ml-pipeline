@@ -1,0 +1,48 @@
+# ML Pipeline - Git Ignore
+# =========================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data files (too large for git - download on first run)
+data/raw/*.csv
+data/processed/*.csv
+
+# Model artifacts (too large for git - train locally or pull from Docker Hub)
+artifacts/*.pkl
+
+# Logs
+logs/*.log
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Distribution
+dist/
+build/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
+
